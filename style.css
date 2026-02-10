@@ -1,0 +1,815 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Raleway:wght@300;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+header {
+    background-color: #0e2813;
+    width: 100%;
+    height: 80px;
+    /* Altura fija de la barra */
+    display: flex;
+    align-items: center;
+    position: sticky;
+    /* Cambiado a sticky para que te siga al bajar */
+    top: 0;
+    z-index: 1000;
+}
+
+header>div {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo-container {
+    /* Eliminamos el absolute de la imagen y se lo damos al contenedor 
+       para controlar mejor el espacio */
+    position: relative;
+    width: 200px;
+    /* Ajusta este ancho según qué tan ancho sea tu logo */
+    height: 80px;
+    /* Misma altura que el header */
+}
+
+.logo-container img {
+    height: 150px;
+    /* Aquí controlas el tamaño real del logo */
+    width: auto;
+    display: block;
+    object-fit: contain;
+    position: absolute;
+    top: 50%;
+    /* Centrado vertical exacto */
+    transform: translateY(-50%);
+    left: 0;
+    filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.4));
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff;
+    /* Ajusta según tus colores */
+    transition: color 0.3s;
+}
+
+.main-nav ul li a {
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    /* Se ve más profesional en menús */
+}
+
+.main-nav ul li a:hover {
+    color: #f1c40f;
+}
+
+.btn-whatsapp {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 35px;
+    background-color: #fed06e;
+    /* Tu amarillo */
+    color: #0e2813;
+    /* Verde más oscuro para el texto del botón */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-decoration: none;
+    border-radius: 50px;
+    /* Bordes redondeados y elegantes */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-whatsapp:hover {
+    background-color: #8dc73f;
+    /* Cambia a tu verde claro al pasar el mouse */
+    color: #fffdff;
+    /* Cambia el texto a blanco */
+    transform: translateY(-3px);
+    /* Pequeño salto hacia arriba */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.btn-whatsapp:active {
+    transform: translateY(-1px);
+}
+
+/* Sección Hero */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 10%;
+    /* Espacio a los lados para que el texto no toque los bordes */
+    overflow: hidden;
+}
+
+/* Imagen de fondo con ajuste de pantalla completa */
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+/* Capa de oscurecimiento (Overlay) */
+.hero-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(14, 40, 19, 0.7);
+    /* Verde más oscuro #0e2813 al 70% */
+    z-index: -1;
+}
+
+/* --- ESTILOS DE TEXTO --- */
+
+.hero-section h1 {
+    font-family: 'Montserrat', sans-serif;
+    /* Fuente fuerte para el título */
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    /* Tamaño fluido que se ajusta a la pantalla */
+    color: #fed06e;
+    /* Tu amarillo */
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.hero-section h2 {
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    color: #8dc73f;
+    /* Tu verde claro */
+    font-weight: 400;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+}
+
+.hero-section p {
+    font-family: 'Raleway', sans-serif;
+    /* Fuente más limpia para el párrafo */
+    max-width: 750px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    /* Más espacio entre líneas para que sea fácil de leer */
+    color: #fffdff;
+    /* Tu blanco */
+    font-weight: 300;
+    margin: 0 auto;
+}
+
+.about-section {
+    background-color: #fffdff;
+    /* Fondo blanco */
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.about-section h2 {
+    color: #0e2813;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.about-intro {
+    max-width: 900px;
+    margin: 0 auto 50px;
+    color: #1d4c28;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Contenedor de Tarjetas */
+.cart-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilo Base de la Tarjeta */
+.about-card {
+    background: #fffdff;
+    border-radius: 15px;
+    padding: 40px 25px;
+    width: 320px;
+    box-shadow: 0 10px 30px rgba(14, 40, 19, 0.1);
+    /* Sombra suave verdosa */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-bottom: 5px solid #0e2813;
+    /* Línea base con tu verde oscuro */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(14, 40, 19, 0.2);
+}
+
+/* Imágenes dentro de las tarjetas */
+.about-card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+    object-fit: contain;
+}
+
+.about-card h3 {
+    color: #1d4c28;
+    margin-bottom: 15px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+}
+
+.about-card p {
+    color: #0e2813;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Colores específicos para cada tarjeta para diferenciarlas */
+.about-card.mission {
+    border-top: 4px solid #fed06e;
+}
+
+/* Detalle amarillo */
+.about-card.vision {
+    border-top: 4px solid #8dc73f;
+}
+
+/* Detalle verde claro */
+.about-card.values {
+    border-top: 4px solid #cadc4e;
+}
+
+/* Sección General con un tono Verde Salvia Opaco */
+#services {
+    padding: 80px 10%;
+    /* Un verde suave, con color pero maduro y elegante */
+    background-color: #d1d9cf;
+    text-align: center;
+}
+
+#services h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: #0e2813;
+    /* Tu verde más oscuro */
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Rejilla exacta de 2 en 2 */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto 60px auto;
+}
+
+/* Estilo de Tarjeta Horizontal según ejemplo */
+.service-item {
+    display: flex;
+    /* Mantiene imagen y texto uno al lado del otro */
+    background-color: #ffffff;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    min-height: 200px;
+}
+
+.service-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Alternancia de imagen (Opcional: puedes quitar esto si quieres todas iguales) */
+/* Esto hace que en la segunda columna la imagen salga a la derecha como en tu ejemplo */
+.service-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+/* Contenedor de Imagen */
+.service-image-container {
+    flex: 0 0 45%;
+    /* La imagen ocupa casi la mitad */
+}
+
+.service-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Contenido del Servicio */
+.service-content-wrapper {
+    flex: 1;
+    padding: 30px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.service-content-wrapper h3 {
+    color: #1d4c28;
+    /* Tu verde oscuro */
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.service-content-wrapper p {
+    color: #444;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Botón de WhatsApp destacado */
+.services-cta .btn-primary {
+    display: inline-block;
+    padding: 18px 45px;
+    background-color: #1d4c28;
+    /* Verde corporativo oscuro */
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 4px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.services-cta .btn-primary:hover {
+    background-color: #8dc73f;
+    /* Verde claro al pasar el mouse */
+    transform: translateY(-2px);
+}
+
+/* Sección Galería */
+#gallery {
+    padding: 60px 10%;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+/* Título sin raya (border/after eliminado) */
+#gallery h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: #0e2813;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+/* Contenedor Grid: Forzamos 2 columnas */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* Esto hace que siempre vayan de 2 en 2 */
+    gap: 20px;
+    /* Espacio entre fotos */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Ítems de la galería */
+.gallery-item {
+    width: 100%;
+    height: 400px;
+    /* Altura grande para que luzcan las fotos */
+    overflow: hidden;
+    border-radius: 20px;
+    /* Bordes redondeados */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Evita que la imagen se estire */
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+/* Efecto visual al pasar el mouse */
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* --- SECCIÓN TESTIMONIOS --- */
+.testimonials-container {
+    background-color: #d1d9cf;
+    /* Mismo color que servicios */
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.testimonials-container h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: #0e2813;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Forzamos el Grid a 2 columnas fijas */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 columnas exactas */
+    gap: 40px;
+    /* Espacio generoso entre filas y columnas */
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Estilo de la Tarjeta */
+.testimonial-card {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    border-bottom: 6px solid #0e2813;
+    /* Línea verde característica */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Centra el contenido */
+    transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+}
+
+.stars {
+    color: #f1c40f;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+
+.testimonial-text {
+    font-style: italic;
+    color: #444;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+}
+
+.client-name {
+    color: #0e2813;
+    font-weight: 700;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+.client-location {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+/* --- SECCIÓN CONTACTO --- */
+.form-container {
+    background-color: #ffffff;
+    /* Fondo blanco para contrastar con testimonios */
+    padding: 80px 5%;
+    display: flex;
+    justify-content: center;
+}
+
+.form-container form {
+    background-color: #f9f9f9;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 700px;
+    /* Ancho máximo para que no se estire demasiado */
+}
+
+.form-container h1 {
+    font-family: 'Montserrat', sans-serif;
+    color: #0e2813;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+
+/* Grupos de campos */
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+}
+
+/* Inputs, Select y Textarea */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Arial', sans-serif;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+    box-sizing: border-box;
+    /* Asegura que el padding no afecte el ancho */
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #0e2813;
+    box-shadow: 0 0 8px rgba(14, 40, 19, 0.2);
+}
+
+/* Estilo específico para el área de mensaje */
+.form-group textarea {
+    min-height: 120px;
+}
+
+/* Botón de envío */
+.form-actions {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.btn-submit {
+    background-color: #0e2813;
+    color: #ffffff;
+    padding: 18px 40px;
+    border: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    width: 100%;
+    /* Botón ancho en móviles */
+}
+
+.btn-submit:hover {
+    background-color: #1a4a24;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos Generales del Footer */
+.main-footer {
+    background-color: #0e2813;
+    /* Fondo solicitado */
+    color: #ffffff;
+    padding: 50px 5% 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+/* Estilos Generales del Footer */
+.main-footer {
+    background-color: #0e2813;
+    color: #ffffff;
+    /* Reducimos un poco el padding superior para compensar el logo más grande */
+    padding: 40px 5% 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    align-items: start;
+    /* Alinea el contenido al principio */
+}
+
+/* --- LOGO MÁS GRANDE --- */
+.footer-logo {
+    max-width: 250px;
+    /* Aumentado de 130px a 200px */
+    height: auto;
+    margin-bottom: 15px;
+    display: block;
+    /* Un pequeño ajuste para que no empuje el texto demasiado abajo */
+    margin-top: -10px;
+}
+
+.footer-column h3 {
+    color: #f1c40f;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: #e0e0e0;
+}
+
+.footer-column p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #e0e0e0;
+}
+
+.footer-column a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* --- ESTILO DE REDES SOCIALES --- */
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-icon {
+    width: 40px;
+    /* Ligeramente más grandes para equilibrar el logo */
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.social-icon img {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1);
+}
+
+.social-icon:hover {
+    transform: translateY(-3px);
+    background-color: #f1c40f;
+}
+
+/* Badge */
+.badge {
+    display: inline-block;
+    background-color: #f1c40f;
+    color: #0e2813;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    margin-top: 15px;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.8rem;
+    color: #888;
+}
+
+/* Media Query para tablets y móviles (992px y menores) */
+@media (max-width: 992px) {
+    #gallery {
+        padding: 40px 5%;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* Mantenemos 2 en 2 para que no quede una sola */
+        gap: 15px;
+    }
+
+    .gallery-item {
+        height: 300px;
+        /* Reducimos un poco la altura en pantallas pequeñas */
+    }
+
+    .testimonials-container {
+        padding: 60px 5%;
+    }
+
+    .testimonials-grid {
+        gap: 20px;
+    }
+}
+
+/* Responsivo para móviles y tablets */
+@media (max-width: 1024px) {
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-item,
+    .service-item:nth-child(even) {
+        flex-direction: column;
+    }
+
+    #gallery {
+        padding: 40px 5%;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* Mantenemos 2 en 2 para que no quede una sola */
+        gap: 15px;
+    }
+
+    .gallery-item {
+        height: 300px;
+        /* Reducimos un poco la altura en pantallas pequeñas */
+    }
+
+}
+
+@media (max-width: 480px) {
+    .gallery-item {
+        height: 200px;
+        border-radius: 12px;
+    }
+
+    .gallery-grid {
+        gap: 10px;
+    }
+}
